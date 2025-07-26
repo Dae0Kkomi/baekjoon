@@ -1,17 +1,12 @@
-a=int(input())
-arr=[]
-for i in range(a):
-    arr.append(list(map(int, input().split())))
+import sys
 
-for a in range(a):
-    h,w,n=map(int, arr[a])
-    
-    temp1=n%h   #row, 10%6=4
-    if (n%h!=0):      
-        temp2=(n//h)+1        #column, 1//6+1=2
-    else:
-        temp1=h
-        temp2=n//h
-    print(100*temp1 + temp2)
+T = int(sys.stdin.readline().strip())
+for _ in range(T):
+    h, w, n = map(int, sys.stdin.readline().split())
 
+    q, r = divmod(n-1, h)   # q: 0-기반 호수, r: 0-기반 층수
+    floor = r + 1           # 실제 층수 (1-h)
+    room  = q + 1           # 실제 호수 (1-w)
 
+    # 층수*100 + 호수 형태로 출력 (방번호를 두 자리로 맞추기)
+    print(f"{floor}{room:02d}")
