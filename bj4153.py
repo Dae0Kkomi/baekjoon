@@ -1,10 +1,17 @@
+import math
 arr=[]
-for a in range(30000):
+brr=[]
+j=0
+while(1):
     arr.append(list(map(int, input().split())))
-    if arr[a]==[0,0,0]:
+    arr[j].sort()
+    a,b,c=map(int, arr[j])
+    if (a==b==c==0):
         break
-    a,b,c=map(int, arr[a])
     if a*a+b*b==c*c:
-       print('right')
+        brr.append('right')
     else:
-        print('wrong')
+        brr.append('wrong')
+    j+=1
+for i in range(len(brr)):
+    print(brr[i])
