@@ -10,4 +10,4 @@ for j in range(a):
     temp+=arr[j][0]*arr[j+1][1]
     temps+=arr[j+1][0]*arr[j][1]
 
-print(abs(0.5*(temp-temps)))
+print(round(abs(0.5*(temp-temps)),1))
